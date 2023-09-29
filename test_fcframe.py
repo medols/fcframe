@@ -1,2 +1,3 @@
 def test_anything():
-    pass
+    assert 41 == 42
+    #    pass
