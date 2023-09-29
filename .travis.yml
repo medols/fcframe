@@ -7,7 +7,7 @@ before_install:
 - docker pull husseinabdallah2/mpi4py-cluster:master
 - docker run -d --rm --name mpi4py.n2 -v $(pwd):/root facd914d2eb6 service ssh start -D
 - docker run -d --rm --name mpi4py.n1 -v $(pwd):/root facd914d2eb6 service ssh start -D
-- docker run --rm -it --name mpi4py.n0 -v $(pwd):/root facd914d2eb6 pytest
+- docker run --rm -it --name mpi4py.n0 -v $(pwd):/root facd914d2eb6 /bin/sh -c "cd /root/; pip install pytest; pytest"
 - docker ps -a
 - docker stop mpi4py.n1
 - docker stop mpi4py.n2
