@@ -11,3 +11,4 @@ before_install:
 
 script:
 - docker run --rm -it --name mpi4py.n0 -v $(pwd):/root facd914d2eb6 /bin/sh -c "cd /root/; pip install pytest; pytest -s"
+- docker run --rm -it --name mpi4py.n0 -v $(pwd):/root facd914d2eb6 /bin/sh -c "cd /root/; ssh root@172.17.0.3 date"
